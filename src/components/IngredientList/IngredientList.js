@@ -1,12 +1,11 @@
 import React from 'react';
 import styles from './IngredientList.module.scss';
 
-const IngredientList = () => (
+const IngredientList = ({ ingredients }) => (
 	<ul className={styles.wrapper}>
-		<li className={styles.item}>potatos</li>
-		<li className={styles.item}>carrots</li>
-		<li className={styles.item}>mushrooms</li>
-
+		{ingredients.map(ingredient => (
+			<li className={styles.item} key={ingredient}>{ingredient}</li>
+		))}
 	</ul>
 );
 

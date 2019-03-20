@@ -7,20 +7,23 @@ const initalState = [
 	{
 		image: 'https://unsplash.it/200/200',
 		title: 'Frist recipe',
-		decription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae velit neque. In mattis faucibus neque, ac aliquam massa gravida id. Quisque vestibulum tristique justo a scelerisque.',
-		link: 'https://www.google.com/'
+		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae velit neque. In mattis faucibus neque, ac aliquam massa gravida id. Quisque vestibulum tristique justo a scelerisque.',
+		link: 'https://www.google.com/',
+		ingredients: ['potatos', 'carrots', 'mushrooms'],
 	},
 	{
 		image: 'https://unsplash.it/200/200',
 		title: 'Second recipe',
-		decription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae velit neque. In mattis faucibus neque, ac aliquam massa gravida id. Quisque vestibulum tristique justo a scelerisque.',
-		link: 'https://www.google.com/'
+		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae velit neque. In mattis faucibus neque, ac aliquam massa gravida id. Quisque vestibulum tristique justo a scelerisque.',
+		link: 'https://www.google.com/',
+		ingredients: ['potatos', 'carrots', 'mushrooms'],
 	},
 	{
 		image: 'https://unsplash.it/200/200',
 		title: 'Third recipe',
-		decription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae velit neque. In mattis faucibus neque, ac aliquam massa gravida id. Quisque vestibulum tristique justo a scelerisque.',
-		link: 'https://www.google.com/'
+		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae velit neque. In mattis faucibus neque, ac aliquam massa gravida id. Quisque vestibulum tristique justo a scelerisque.',
+		link: 'https://www.google.com/',
+		ingredients: ['potatos', 'carrots', 'mushrooms'],
 	},
 ]
 class Root extends React.Component {

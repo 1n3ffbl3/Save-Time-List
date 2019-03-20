@@ -1,25 +1,45 @@
 import React from 'react';
 import styles from './ListItem.module.scss';
+import PropTypes from 'prop-types';
 import Title from '../Title/Title';
 import Button from '../Button/Button';
 import IngredientList from '../IngredientList/IngredientList';
 
-const ListItem = () => {
+
+const ListItem = ({
+	image,
+	title,
+	description,
+	link,
+	ingredients
+}) => {
 	return (
 		<li className={styles.wrapper}>
 			<img
-				src={'https://unsplash.it/200/200'}
+				src={image}
 				className={styles.image}
+				alt={title}
 			/>
 			<div className={styles.subWrapper}>
-				<Title>Recipe</Title>
+				<Title>{title}</Title>
 				<p className={styles.description}>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae velit neque. In mattis faucibus neque, ac aliquam massa gravida id. Quisque vestibulum tristique justo a scelerisque.
+					{description}
 				</p>
-				<Button href={'https://www.google.com/'}>Visit source</Button>
+				<Button href={link}>Visit source</Button>
 			</div>
-			<IngredientList />
+			<IngredientList ingredients={ingredients} />
 		</li>
 	)
 };
+ListItem.propTypes = {
+	image: PropTypes.string.isRequired,
+	title: PropTypes.string,
+	description: PropTypes.string,
+	link: PropTypes.string.isRequired,
+};
+
+ListItem.defaultProps = {
+	image: null,
+	link: null,
+}
 export default ListItem;
