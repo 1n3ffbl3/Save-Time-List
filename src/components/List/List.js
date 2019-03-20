@@ -4,7 +4,13 @@ import ListItem from './ListItem';
 
 const List = () => (
 	<>
-		<ListItem />
+		<ul className={styles.wrapper}>
+			<ListItem />
+			<ListItem />
+			<ListItem />
+		</ul>
+
+
 	</>
 );
 
