@@ -2,6 +2,7 @@ import React from 'react';
 import './index.css';
 import List from '../../components/List/List';
 import Modal from '../../components/Modal/Modal';
+import Button from '../../components/Button/Button';
 
 const initalState = [
 	{
@@ -29,10 +30,18 @@ const initalState = [
 class Root extends React.Component {
 	state = {
 		items: [...initalState],
+		isModalOpen: false,
+	}
+
+	openModal = () => {
+		this.setState({
+			isModalOpen: true
+		})
 	}
 	render() {
 		return (
 			<div>
+				<Button onClick={this.openModal}>Add new item</Button>
 				<List items={this.state.items} />
 				{/* <Modal /> */}
 			</div>
