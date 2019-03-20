@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './ListItem.module.scss';
-
+import Title from '../Title/Title';
+import Button from '../Button/Button';
+import IngredientList from '../IngredientList/IngredientList';
 
 const ListItem = () => {
 	return (
@@ -9,12 +11,13 @@ const ListItem = () => {
 				src={'https://unsplash.it/200/200'}
 				className={styles.image}
 			/>
-			<div>
-				<h2 className={styles.title}>Title</h2>
+			<div className={styles.subWrapper}>
+				<Title></Title>
 				<p className={styles.description}>Teststetes testest  tes t
 				</p>
-				<button className={styles.button} href={'https://google.com'}>Visit source</button>
+				<Button href={'https://www.google.com/'}> Visit source</Button>
 			</div>
+			<IngredientList />
 		</li>
 	)
 };
