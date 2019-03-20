@@ -11,7 +11,7 @@ import ThingsToSeeListView from '../ThingsToSeeListView/ThingsToSeeListView';
 const initalState = [
 	{
 		image: 'https://unsplash.it/200/200',
-		title: 'Frist recipe',
+		title: 'First recipe',
 		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae velit neque. In mattis faucibus neque, ac aliquam massa gravida id. Quisque vestibulum tristique justo a scelerisque.',
 		link: 'https://www.google.com/',
 		ingredients: ['potatos', 'carrots', 'mushrooms'],
