@@ -4,7 +4,9 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import List from '../../components/List/List';
 import Modal from '../../components/Modal/Modal';
 import Header from '../../components/Header/Header';
-
+import GroceryListView from '../GroceryListView/GroceryListView';
+import CheckoutListView from '../CheckoutListView/CheckoutListView';
+import ThingsToSeeListView from '../ThingsToSeeListView/ThingsToSeeListView';
 
 const initalState = [
 	{
@@ -42,12 +44,17 @@ class Root extends React.Component {
 	}
 	render() {
 		return (
-			<div>
-				<Header openFn={this.openModal} />
+			<BrowserRouter>
+				<>
+					<Route exact path="/" component={GroceryListView}></Route>
+					<Route path="/checkout" component={CheckoutListView}></Route>
+					<Route path="/thingstosee" component={ThingsToSeeListView}></Route>
+					<Header openFn={this.openModal} />
 
-				<List items={this.state.items} />
-				{/* <Modal /> */}
-			</div>
+					<List items={this.state.items} />
+					{/* <Modal /> */}
+				</>
+			</BrowserRouter>
 		)
 	}
 };

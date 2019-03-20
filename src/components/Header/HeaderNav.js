@@ -6,8 +6,18 @@ const HeaderNav = () => (
 	<nav>
 		<ul className={styles.wrapper}>
 			<li className={styles.navItem}>
-				<NavLink>
-
+				<NavLink
+					exact
+					className={styles.navItemLink}
+					to="/">grocery list
+				</NavLink>
+				<NavLink
+					className={styles.navItemLink}
+					to="/checkout">check-out list
+				</NavLink>
+				<NavLink
+					className={styles.navItemLink}
+					to="/thingstosee">things to see
 				</NavLink>
 			</li>
 		</ul>
