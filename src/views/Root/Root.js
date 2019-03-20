@@ -1,8 +1,10 @@
 import React from 'react';
 import './index.css';
+import { BrowserRouter, Route } from 'react-router-dom';
 import List from '../../components/List/List';
 import Modal from '../../components/Modal/Modal';
-import Button from '../../components/Button/Button';
+import Header from '../../components/Header/Header';
+
 
 const initalState = [
 	{
@@ -41,7 +43,8 @@ class Root extends React.Component {
 	render() {
 		return (
 			<div>
-				<Button onClick={this.openModal}>Add new item</Button>
+				<Header openFn={this.openModal} />
+
 				<List items={this.state.items} />
 				{/* <Modal /> */}
 			</div>
