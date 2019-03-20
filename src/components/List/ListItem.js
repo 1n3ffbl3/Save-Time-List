@@ -12,10 +12,11 @@ const ListItem = () => {
 				className={styles.image}
 			/>
 			<div className={styles.subWrapper}>
-				<Title></Title>
-				<p className={styles.description}>Teststetes testest  tes t
+				<Title>Recipe</Title>
+				<p className={styles.description}>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae velit neque. In mattis faucibus neque, ac aliquam massa gravida id. Quisque vestibulum tristique justo a scelerisque.
 				</p>
-				<Button href={'https://www.google.com/'}> Visit source</Button>
+				<Button href={'https://www.google.com/'}>Visit source</Button>
 			</div>
 			<IngredientList />
 		</li>
