@@ -42,7 +42,9 @@ class Root extends React.Component {
 			isModalOpen: true
 		})
 	}
+
 	render() {
+		const { isModalOpen } = this.state;
 		return (
 			<BrowserRouter>
 				<>
@@ -52,7 +54,7 @@ class Root extends React.Component {
 					<Header openFn={this.openModal} />
 
 					<List items={this.state.items} />
-					{/* <Modal /> */}
+					{isModalOpen && <Modal />}
 				</>
 			</BrowserRouter>
 		)
