@@ -41,7 +41,13 @@ class Root extends React.Component {
 		this.setState({
 			isModalOpen: true
 		})
-	}
+	};
+
+	closeModal = () => {
+		this.setState({
+			isModalOpen: false
+		})
+	};
 
 	render() {
 		const { isModalOpen } = this.state;
@@ -54,7 +60,7 @@ class Root extends React.Component {
 					<Header openFn={this.openModal} />
 
 					<List items={this.state.items} />
-					{isModalOpen && <Modal />}
+					{isModalOpen && <Modal closeFn={this.closeModal} />}
 				</>
 			</BrowserRouter>
 		)
