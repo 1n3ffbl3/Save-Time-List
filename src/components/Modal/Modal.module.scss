@@ -10,3 +10,20 @@
   box-shadow: 0 20px 40px -5px rgba(#CEBB9B, .3);
   position: fixed;
 }
+
+.closeButton {
+	position: absolute;
+	right: 32px;
+	top: 32px;
+	width: 40px;
+	height: 40px;
+	opacity: 0.5;
+	background:#FFFCF4;
+	font-weight: 800;
+	font-family: 'Open Sans', sans-serif;
+	border-radius: 50%;
+}
+
+.closeButton::hover {
+	opacity: 1;
+}
