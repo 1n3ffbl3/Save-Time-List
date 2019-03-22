@@ -34,7 +34,7 @@ const initalState = [
 class Root extends React.Component {
 	state = {
 		items: [...initalState],
-		isModalOpen: false,
+		isModalOpen: true,
 	}
 
 	openModal = () => {
