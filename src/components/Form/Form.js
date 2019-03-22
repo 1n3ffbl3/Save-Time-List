@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Form.module.scss';
 import Title from '../Title/Title';
-
+import Input from '../Input/Input';
 
 class Form extends React.Component {
 	render() {
@@ -12,8 +12,7 @@ class Form extends React.Component {
 					autoComplete="off"
 					className={styles.form}
 				>
-					<input>
-					</input>
+					<Input />
 				</form>
 
 			</div>
