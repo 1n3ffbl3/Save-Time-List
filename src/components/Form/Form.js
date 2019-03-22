@@ -56,7 +56,7 @@ class Form extends React.Component {
 						onChange={this.handleInputChange}
 						value={this.state.title}
 						name="description"
-						tag="input"
+						tag="textarea"
 						label="description"
 					/>
 				</form>

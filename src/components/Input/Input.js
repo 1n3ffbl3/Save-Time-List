@@ -4,7 +4,7 @@ import styles from './Input.module.scss';
 const Input = ({ tag: Tag, name, label }) => (
 	<div className={styles.formItem}>
 		<Tag
-			className={styles.input}
+			className={Tag === 'input' ? styles.input : styles.textarea}
 			type="text"
 			name={name}
 			id={name}
