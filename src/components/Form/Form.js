@@ -35,26 +35,23 @@ class Form extends React.Component {
 						onChange={this.handleInputChange}
 						value={this.state.title}
 						name="title"
-						tag="input"
 						label="title"
 					/>
 					<Input
 						onChange={this.handleInputChange}
-						value={this.state.title}
+						value={this.state.image}
 						name="image"
-						tag="input"
 						label="image"
 					/>
 					<Input
 						onChange={this.handleInputChange}
-						value={this.state.title}
+						value={this.state.link}
 						name="link"
-						tag="input"
 						label="link"
 					/>
 					<Input
 						onChange={this.handleInputChange}
-						value={this.state.title}
+						value={this.state.description}
 						name="description"
 						tag="textarea"
 						label="description"
