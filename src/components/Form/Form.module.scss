@@ -11,5 +11,9 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
+	max-width: 350px;
 	
+	button {
+		margin-top: 50px;
+	}
 }

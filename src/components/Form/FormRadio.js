@@ -9,9 +9,8 @@ const FormRadio = ({ children, id, checked, switchFn }) => (
 			checked={checked}
 			onChange={switchFn}
 		/>
-		<div className={styles.radioButton}>
-			{children}
-		</div>
+		<div className={styles.radioButton} />
+		{children}
 	</label>
 );
 
