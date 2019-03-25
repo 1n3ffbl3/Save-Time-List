@@ -25,31 +25,42 @@ class Form extends React.Component {
 		});
 	};
 
+	handleRadioButtonChange = type => {
+		this.setState({
+			type: type,
+		});
+	};
+
 	render() {
 		const { type } = this.state;
 
 		return (
 			<div className={styles.wrapper}>
 				<Title>Add new item</Title>
-				<FormRadio
-					id={types.grocery}
-					checked={type === types.grocery}
-				>grocery
-				</FormRadio>
-				<FormRadio
-					id={types.checkout}
-					checked={type === types.checkout}
-				>checkout
-				</FormRadio>
-				<FormRadio
-					id={types.thingsToSee}
-					checked={type === types.thingsToSee}
-				>things to see
-				</FormRadio>
 				<form
 					autoComplete="off"
-					className={styles.form}
-				>
+					className={styles.form}>
+					<FormRadio
+						id={types.grocery}
+						checked={type === types.grocery}
+						switchFn={() => this.handleRadioButtonChange(types.grocery)}
+					>
+						grocery
+					</FormRadio>
+					<FormRadio
+						id={types.checkout}
+						checked={type === types.checkout}
+						switchFn={() => this.handleRadioButtonChange(types.checkout)}
+					>
+						checkouts
+					</FormRadio>
+					<FormRadio
+						id={types.thingsToSee}
+						checked={type === types.thingsToSee}
+						switchFn={() => this.handleRadioButtonChange(types.thingsToSee)}
+					>
+						things to see
+					</FormRadio>
 					<Input
 						onChange={this.handleInputChange}
 						value={this.state.title}
@@ -75,9 +86,8 @@ class Form extends React.Component {
 						tag="textarea"
 						label="description"
 					/>
+					<Button>Save</Button>
 				</form>
-				<Button>Save</Button>
-
 			</div>
 		)
 	}
