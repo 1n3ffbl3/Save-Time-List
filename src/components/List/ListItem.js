@@ -13,13 +13,15 @@ const ListItem = ({
 	link,
 	ingredients
 }) => {
+
+	const ImageTag = image ? 'img' : 'div';
 	return (
 		<li className={styles.wrapper}>
-			<img
+			{image && <ImageTag
 				src={image}
-				className={styles.image}
+				className={image ? styles.image : styles.imageNone}
 				alt={title}
-			/>
+			/>}
 			<div className={styles.subWrapper}>
 				<Title>{title}</Title>
 				<p className={styles.description}>

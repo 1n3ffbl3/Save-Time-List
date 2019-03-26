@@ -10,7 +10,8 @@
 
 .secondary {
 	@extend .button;
-	background-color: #7e7661;
-	border: #7e7661;
-	color: #FFFCF4;
+	background-color: #FFFCF4;
+	border: 2px solid #9098a9;
+	color: #9098a9;
+	font-size: 14px;
 }
