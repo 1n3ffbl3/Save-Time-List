@@ -65,20 +65,24 @@ class Form extends React.Component {
 						onChange={this.handleInputChange}
 						value={this.state.title}
 						name="title"
-						label="title"
+						label={type === types.grocery ? 'recipe title' : 'title'}
 					/>
-					<Input
-						onChange={this.handleInputChange}
-						value={this.state.image}
-						name="image"
-						label="image"
-					/>
-					<Input
-						onChange={this.handleInputChange}
-						value={this.state.link}
-						name="link"
-						label="link"
-					/>
+					{type !== types.checkout ? (
+						<Input
+							onChange={this.handleInputChange}
+							value={this.state.image}
+							name="image"
+							label="image"
+						/>
+					) : null}
+					{type !== types.checkout ? (
+						<Input
+							onChange={this.handleInputChange}
+							value={this.state.link}
+							name="link"
+							label={type === types.grocery ? 'source link' : 'link'}
+						/>
+					) : null}
 					<Input
 						onChange={this.handleInputChange}
 						value={this.state.description}
