@@ -49,6 +49,16 @@ class Root extends React.Component {
 		})
 	};
 
+	addItem = (event, newItem) => {
+		event.preventDefault();
+
+		this.setState(prevState => ({
+			[newItem.type]: [...prevState[newItem.type], newItem],
+		}));
+
+		this.closeModal();
+	}
+
 	render() {
 		const { isModalOpen } = this.state;
 		return (
