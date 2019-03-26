@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.css';
+import AppContext from '../../context';
 import { BrowserRouter, Route } from 'react-router-dom';
 import List from '../../components/List/List';
 import Modal from '../../components/Modal/Modal';
@@ -34,6 +35,9 @@ const initalState = [
 class Root extends React.Component {
 	state = {
 		items: [...initalState],
+		checkout: [],
+		grocery: [],
+		thingsToSee: [],
 		isModalOpen: true,
 	}
 
@@ -61,9 +65,13 @@ class Root extends React.Component {
 
 	render() {
 		const { isModalOpen } = this.state;
+		const contextElements = {
+			...this.state,
+			addItem: this.addItem,
+		}
 		return (
 			<BrowserRouter>
-				<>
+				<AppContext.Provider value={contextElements}>
 					<Route exact path="/" component={GroceryListView}></Route>
 					<Route path="/checkout" component={CheckoutListView}></Route>
 					<Route path="/thingstosee" component={ThingsToSeeListView}></Route>
@@ -71,7 +79,7 @@ class Root extends React.Component {
 
 					<List items={this.state.items} />
 					{isModalOpen && <Modal closeFn={this.closeModal} />}
-				</>
+				</AppContext.Provider>
 			</BrowserRouter>
 		)
 	}

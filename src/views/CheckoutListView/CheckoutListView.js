@@ -1,7 +1,14 @@
 import React from 'react';
+import AppContext from '../../context';
+import List from '../../components/List/List';
 
 const CheckoutListView = () => (
-	<p>Check-out list view</p>
+	<AppContext.Consumer>
+		{(context) => (
+			<List items={context.checkout} />
+		)}
+
+	</AppContext.Consumer>
 );
 
 export default CheckoutListView;
