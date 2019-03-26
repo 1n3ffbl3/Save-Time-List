@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Form.module.scss';
 import Title from '../Title/Title';
 import Input from '../Input/Input';
+import IngredientList from '../IngredientList/IngredientList';
 import Button from '../Button/Button';
 import FormRadio from './FormRadio';
 import AppContext from '../../context';
@@ -24,6 +25,8 @@ class Form extends React.Component {
 		image: '',
 		link: '',
 		description: '',
+		ingredient: '',
+		ingredients: [],
 	};
 
 	handleInputChange = event => {
@@ -37,6 +40,16 @@ class Form extends React.Component {
 			type: type,
 		});
 	};
+
+	handleAddIngredient = event => {
+		event.preventDefault();
+		const { ingredient, ingredients } = this.state;
+		ingredients.push(ingredient);
+		this.setState({
+			ingredients: ingredients,
+			ingredient: ''
+		});
+	}
 
 	render() {
 		const { type } = this.state;
@@ -100,6 +113,15 @@ class Form extends React.Component {
 								tag="textarea"
 								label="description"
 							/>
+							<Input
+								onChange={this.handleInputChange}
+								value={this.state.ingredient}
+								name="ingredient"
+								label="ingredient"
+								noValidate
+							/>
+							<input type="button" onClick={this.handleAddIngredient} value="Add" />
+							<IngredientList ingredients={this.state.ingredients}></IngredientList>
 							<Button secondary>Save</Button>
 						</form>
 					</div>
