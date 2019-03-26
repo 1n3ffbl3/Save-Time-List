@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'proptypes';
 import styles from './IngredientList.module.scss';
 
 const IngredientList = ({ ingredients }) => (
@@ -9,4 +10,11 @@ const IngredientList = ({ ingredients }) => (
 	</ul>
 );
 
+IngredientList.propTypes = {
+	ingredients: PropTypes.string,
+};
+
+IngredientList.defaultProps = {
+	ingredients: null,
+}
 export default IngredientList;

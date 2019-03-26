@@ -5,7 +5,7 @@ import HeaderNav from './HeaderNav';
 
 const Header = ({ openFn }) => (
 	<header className={styles.wrapper}>
-		<HeaderNav ></HeaderNav>
+		<HeaderNav />
 		<Button onClick={openFn}>Add new item</Button>
 	</header>
 );
