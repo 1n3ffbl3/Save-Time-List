@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import styles from './IngredientList.module.scss';
 
 const IngredientList = ({ ingredients }) => (
-	<ul className={styles.wrapper}>
-		{ingredients.map(ingredient => (
-			<li className={styles.item} key={ingredient}>{ingredient}</li>
-		))}
-	</ul>
+	<>
+	</>
+	// <ul className={styles.wrapper}>
+	// 	{ingredients.map(ingredient => (
+	// 		<li className={styles.item} key={ingredient}>{children}</li>
+	// 	))}
+	// </ul>
 );
 
 IngredientList.propTypes = {

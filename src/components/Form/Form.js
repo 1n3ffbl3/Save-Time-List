@@ -4,6 +4,7 @@ import Title from '../Title/Title';
 import Input from '../Input/Input';
 import Button from '../Button/Button';
 import FormRadio from './FormRadio';
+import AppContext from '../../context';
 
 const types = {
 	grocery: 'grocery',
@@ -41,64 +42,69 @@ class Form extends React.Component {
 		const { type } = this.state;
 
 		return (
-			<div className={styles.wrapper}>
-				<Title>Add new {descriptions[type]}</Title>
-				<form
-					autoComplete="off"
-					className={styles.form}>
-					<FormRadio
-						id={types.grocery}
-						checked={type === types.grocery}
-						switchFn={() => this.handleRadioButtonChange(types.grocery)}
-					>
-						grocery
-					</FormRadio>
-					<FormRadio
-						id={types.checkout}
-						checked={type === types.checkout}
-						switchFn={() => this.handleRadioButtonChange(types.checkout)}
-					>
-						checkouts
-					</FormRadio>
-					<FormRadio
-						id={types.thingsToSee}
-						checked={type === types.thingsToSee}
-						switchFn={() => this.handleRadioButtonChange(types.thingsToSee)}
-					>
-						things to see
-					</FormRadio>
-					<Input
-						onChange={this.handleInputChange}
-						value={this.state.title}
-						name="title"
-						label={type === types.grocery ? 'recipe title' : 'title'}
-					/>
-					{type !== types.checkout ? (
-						<Input
-							onChange={this.handleInputChange}
-							value={this.state.image}
-							name="image"
-							label="image"
-						/>
-					) : null}
-					{type !== types.checkout ? (
-						<Input
-							onChange={this.handleInputChange}
-							value={this.state.link}
-							name="link"
-							label={type === types.grocery ? 'source link' : 'link'}
-						/>
-					) : null}
-					<Input
-						onChange={this.handleInputChange}
-						value={this.state.description}
-						name="description"
-						tag="textarea"
-						label="description"
-					/>
-					<Button secondary>Save</Button>
-				</form>
-			</div>
+			<AppContext.Consumer>
+				{(context) => (
+					<div className={styles.wrapper}>
+						<Title>Add new {descriptions[type]}</Title>
+						<form
+							autoComplete="off"
+							className={styles.form}
+							onSubmit={(event) => context.addItem(event, this.state)}>
+							<FormRadio
+								id={types.grocery}
+								checked={type === types.grocery}
+								switchFn={() => this.handleRadioButtonChange(types.grocery)}
+							>
+								grocery
+							</FormRadio>
+							<FormRadio
+								id={types.checkout}
+								checked={type === types.checkout}
+								switchFn={() => this.handleRadioButtonChange(types.checkout)}
+							>
+								checkouts
+							</FormRadio>
+							<FormRadio
+								id={types.thingsToSee}
+								checked={type === types.thingsToSee}
+								switchFn={() => this.handleRadioButtonChange(types.thingsToSee)}
+							>
+								things to see
+							</FormRadio>
+							<Input
+								onChange={this.handleInputChange}
+								value={this.state.title}
+								name="title"
+								label={type === types.grocery ? 'recipe title' : 'title'}
+							/>
+							{type !== types.checkout ? (
+								<Input
+									onChange={this.handleInputChange}
+									value={this.state.image}
+									name="image"
+									label="image"
+								/>
+							) : null}
+							{type !== types.checkout ? (
+								<Input
+									onChange={this.handleInputChange}
+									value={this.state.link}
+									name="link"
+									label={type === types.grocery ? 'source link' : 'link'}
+								/>
+							) : null}
+							<Input
+								onChange={this.handleInputChange}
+								value={this.state.description}
+								name="description"
+								tag="textarea"
+								label="description"
+							/>
+							<Button secondary>Save</Button>
+						</form>
+					</div>
+				)}
+			</AppContext.Consumer>
 		)
 	}
 };
