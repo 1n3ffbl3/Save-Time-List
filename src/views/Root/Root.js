@@ -1,8 +1,7 @@
 import React from 'react';
 import './index.css';
 import AppContext from '../../context';
-import { BrowserRouter, Route } from 'react-router-dom';
-import List from '../../components/List/List';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Modal from '../../components/Modal/Modal';
 import Header from '../../components/Header/Header';
 import GroceryListView from '../GroceryListView/GroceryListView';
@@ -72,12 +71,12 @@ class Root extends React.Component {
 		return (
 			<BrowserRouter>
 				<AppContext.Provider value={contextElements}>
-					<Route exact path="/" component={GroceryListView}></Route>
-					<Route path="/checkout" component={CheckoutListView}></Route>
-					<Route path="/thingstosee" component={ThingsToSeeListView}></Route>
 					<Header openFn={this.openModal} />
-
-					<List items={this.state.items} />
+					<Switch>
+						<Route exact path="/" component={GroceryListView}></Route>
+						<Route path="/checkout" component={CheckoutListView}></Route>
+						<Route path="/thingstosee" component={ThingsToSeeListView}></Route>
+					</Switch>
 					{isModalOpen && <Modal closeFn={this.closeModal} />}
 				</AppContext.Provider>
 			</BrowserRouter>
