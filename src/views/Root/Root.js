@@ -37,7 +37,7 @@ class Root extends React.Component {
 		checkout: [],
 		grocery: [],
 		thingsToSee: [],
-		isModalOpen: true,
+		isModalOpen: false,
 	}
 
 	openModal = () => {

@@ -1,7 +1,13 @@
 import React from 'react';
+import AppContext from '../../context';
+import List from '../../components/List/List';
 
 const ThingsToSeeListView = () => (
-	<p>Things to see list view</p>
+	<AppContext.Consumer>
+		{(context) => (
+			<List items={context.thingsToSee} />
+		)}
+	</AppContext.Consumer>
 );
 
 export default ThingsToSeeListView;
