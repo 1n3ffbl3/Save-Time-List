@@ -10,6 +10,12 @@ const types = {
 	checkout: 'checkout',
 	thingsToSee: 'thingsToSee'
 }
+
+const descriptions = {
+	grocery: 'recipe',
+	checkout: 'item',
+	thingsToSee: 'place, building or something else to see before you die'
+}
 class Form extends React.Component {
 	state = {
 		type: types.grocery,
@@ -36,7 +42,7 @@ class Form extends React.Component {
 
 		return (
 			<div className={styles.wrapper}>
-				<Title>Add new item</Title>
+				<Title>Add new {descriptions[type]}</Title>
 				<form
 					autoComplete="off"
 					className={styles.form}>
