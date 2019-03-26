@@ -4,12 +4,16 @@ import ListItem from './ListItem';
 
 const List = ({ items }) => (
 	<>
-		<ul className={styles.wrapper}>
-			{items.map(item => (
-				<ListItem {...item} key={item.title} />
-			))}
+		{items.length ? (
+			<ul className={styles.wrapper}>
+				{items.map(item => (
+					<ListItem {...item} key={item.title} />
+				))}
 
-		</ul>
+			</ul>
+		) : (
+				<h1 className={styles.noItems}>There's nothing here yet, please add some items!</h1>
+			)}
 	</>
 );
 
