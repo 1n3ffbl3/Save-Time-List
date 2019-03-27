@@ -11,7 +11,8 @@ const ListItem = ({
 	title,
 	description,
 	link,
-	ingredients
+	ingredients,
+	checklist,
 }) => {
 
 	const ImageTag = image ? 'img' : 'div';
@@ -22,8 +23,17 @@ const ListItem = ({
 				className={image ? styles.image : styles.imageNone}
 				alt={title}
 			/>}
+			{checklist && (
+				<div className={styles.subWrapper}>
+					<input className={styles.styledCheckbox} type="checkbox" id={checklist} />
+					<label for={checklist}>
+						{checklist}
+					</label>
+
+				</div>
+			)}
 			<div className={styles.subWrapper}>
-				<Title>{title}</Title>
+				{title && <Title>{title}</Title>}
 
 				{description &&
 					<p className={styles.description}>{description}</p>}

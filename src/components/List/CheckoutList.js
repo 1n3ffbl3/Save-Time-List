@@ -7,16 +7,9 @@ const CheckoutList = ({ items }) => (
 		{items.length ? (
 			<ul className={styles.wrapper}>
 				{items.map(item => (
-					<label className="container">
-						<input type="checkbox" />
-						<span className="checkmark">
-							<ListItem {...item} key={item.title} />
-						</span>
-					</label>
+					<ListItem {...item} key={item.checklist} />
 				))}
-
 			</ul>
-
 		) : (
 				<h1 className={styles.noItems}>There's nothing here yet, please add some items!</h1>
 			)}

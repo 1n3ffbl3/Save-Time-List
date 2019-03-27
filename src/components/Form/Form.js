@@ -26,6 +26,7 @@ class Form extends React.Component {
 		link: '',
 		description: '',
 		ingredient: '',
+		checklist: '',
 		ingredients: [],
 	};
 
@@ -84,12 +85,22 @@ class Form extends React.Component {
 							>
 								things to see
 							</FormRadio>
-							<Input
-								onChange={this.handleInputChange}
-								value={this.state.title}
-								name="title"
-								label={type === types.grocery ? 'recipe title' : 'title'}
-							/>
+							{type !== types.checkout ? (
+								<Input
+									onChange={this.handleInputChange}
+									value={this.state.title}
+									name="title"
+									label={type === types.grocery ? 'recipe title' : 'title'}
+								/>
+							) : (
+									<Input
+										onChange={this.handleInputChange}
+										value={this.state.checklist}
+										name="checklist"
+										label={'new item to checklist'}
+									/>
+								)}
+
 							{type !== types.checkout ? (
 								<Input
 									onChange={this.handleInputChange}
