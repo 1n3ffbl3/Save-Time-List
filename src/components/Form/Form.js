@@ -106,22 +106,28 @@ class Form extends React.Component {
 									label={type === types.grocery ? 'source link' : 'link'}
 								/>
 							) : null}
-							<Input
-								onChange={this.handleInputChange}
-								value={this.state.description}
-								name="description"
-								tag="textarea"
-								label="description"
-							/>
-							<Input
-								onChange={this.handleInputChange}
-								value={this.state.ingredient}
-								name="ingredient"
-								label="ingredient"
-								noValidate
-							/>
-							<input type="button" onClick={this.handleAddIngredient} value="Add" />
-							<IngredientList ingredients={this.state.ingredients}></IngredientList>
+							{type !== types.checkout ? (
+								<Input
+									onChange={this.handleInputChange}
+									value={this.state.description}
+									name="description"
+									tag="textarea"
+									label="description"
+								/>
+							) : null}
+							{type === types.grocery ? (
+								<>
+									<Input
+										onChange={this.handleInputChange}
+										value={this.state.ingredient}
+										name="ingredient"
+										label="ingredient"
+										noValidate
+									/>
+									<input type="button" onClick={this.handleAddIngredient} value="Add" />
+									<IngredientList ingredients={this.state.ingredients}></IngredientList>
+								</>
+							) : null}
 							<Button secondary>Save</Button>
 						</form>
 					</div>

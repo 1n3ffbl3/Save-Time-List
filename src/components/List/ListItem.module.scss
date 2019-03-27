@@ -31,6 +31,12 @@
 	border-radius: 50%;
 }
 
+.imageNone {
+	@extend .image;
+	background: url('https://unsplash.it/200/200') no-repeat;
+	background-size: cover;
+}
+
 .description {
     margin: 10px 0 20px;
 	font-weight: 300;

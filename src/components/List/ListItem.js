@@ -24,10 +24,11 @@ const ListItem = ({
 			/>}
 			<div className={styles.subWrapper}>
 				<Title>{title}</Title>
-				<p className={styles.description}>
-					{description}
-				</p>
-				<Button href={link}>Visit source</Button>
+
+				{description &&
+					<p className={styles.description}>{description}</p>}
+
+				{link && <Button href={link}>Visit source</Button>}
 			</div>
 			<IngredientList ingredients={ingredients} />
 		</li>
@@ -35,13 +36,15 @@ const ListItem = ({
 };
 ListItem.propTypes = {
 	image: PropTypes.string.isRequired,
-	title: PropTypes.string,
-	description: PropTypes.string,
+	title: PropTypes.string.isRequired,
+	description: PropTypes.string.isRequired,
 	link: PropTypes.string.isRequired,
 };
 
 ListItem.defaultProps = {
 	image: null,
+	title: null,
+	description: null,
 	link: null,
 }
 export default ListItem;
