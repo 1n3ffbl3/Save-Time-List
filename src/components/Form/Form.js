@@ -62,6 +62,7 @@ class Form extends React.Component {
 						<Title>Add new {descriptions[type]}</Title>
 						<form
 							autoComplete="off"
+							noValidate
 							className={styles.form}
 							onSubmit={(event) => context.addItem(event, this.state)}>
 							<FormRadio
@@ -133,7 +134,6 @@ class Form extends React.Component {
 										value={this.state.ingredient}
 										name="ingredient"
 										label="ingredient"
-										noValidate
 									/>
 									<input type="button" onClick={this.handleAddIngredient} value="Add" />
 									<IngredientList ingredients={this.state.ingredients}></IngredientList>
