@@ -9,7 +9,6 @@ const Input = ({ tag: Tag, name, label, maxLength, ...props }) => (
 			type="text"
 			name={name}
 			id={name}
-			required
 			placeholder=" "
 			maxLength={maxLength}
 			{...props}

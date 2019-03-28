@@ -62,7 +62,6 @@ class Form extends React.Component {
 						<Title>Add new {descriptions[type]}</Title>
 						<form
 							autoComplete="off"
-							noValidate
 							className={styles.form}
 							onSubmit={(event) => context.addItem(event, this.state)}>
 							<FormRadio
@@ -92,6 +91,7 @@ class Form extends React.Component {
 									value={this.state.title}
 									name="title"
 									label={type === types.grocery ? 'recipe title' : 'title'}
+									required
 								/>
 							) : (
 									<Input
@@ -99,6 +99,7 @@ class Form extends React.Component {
 										value={this.state.checklist}
 										name="checklist"
 										label={'new item to checklist'}
+										required
 									/>
 								)}
 
@@ -125,6 +126,7 @@ class Form extends React.Component {
 									name="description"
 									tag="textarea"
 									label="description"
+									required
 								/>
 							) : null}
 							{type === types.grocery ? (
